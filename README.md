@@ -1,5 +1,12 @@
-# hello-world
+# APP Design Project
 
+## Project Definitions and Requirements
 
-I play piano and eat foods!!!!!
-!!!
+### Project Definition
+
+### Project Requirements
+
+**Functional**
+
+**Non-Functional**
+
