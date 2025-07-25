@@ -1,6 +1,6 @@
 # APP Design Project
 
-## Project Definitions and Requirements
+## Project Description and Requirements
 
 ### Project Description
 
