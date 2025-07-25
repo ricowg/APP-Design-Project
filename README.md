@@ -2,7 +2,7 @@
 
 ## Project Definitions and Requirements
 
-### Project Definition
+### Project Description
 
 A unified communication platform designed to integrate all major messaging services into one single interface, maximising efficiency.  
 
