@@ -13,3 +13,19 @@ A unified communication platform designed to integrate all major messaging servi
 | Merge social media apps together      | Load messages sent under 1 second|
 | Allow communication between people    | Easy to navigate                 |
 | User account management               | Compatibility                    |
+
+## Website Designs
+
+
+
+### Log in Page
+
+! (hello-world/images/website-design-1.png)
+
+### Sign in Page
+
+! (hello-world/images/website-design-2.png)
+
+### Inside the app
+
+! (hello-world/images/website-design-3.png)
