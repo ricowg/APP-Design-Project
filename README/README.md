@@ -16,16 +16,26 @@ A unified communication platform designed to integrate all major messaging servi
 
 ## Website Designs
 
+### Inside the Page
 
-
-### Log in Page
-
-! [](APP-Design-Project/images/website-design-1.png)
+<img src="website-design-1.png" alt="website design 1">
 
 ### Sign in Page
 
-! [](APP-Design-Project/images/website-design-2.png)
+<img src="website-design-2.png" alt="website design 2">
 
-### Inside the app
+### Log in Page
 
-! [](APP-Design-Project/images/website-design-3.png)
+<img src="website-design-3.png" alt="website design 3">
+
+## Alternative Designs
+
+### Inside the Page
+
+
+
+### Sign in Page
+
+
+
+### Log in Page
