@@ -20,12 +20,12 @@ A unified communication platform designed to integrate all major messaging servi
 
 ### Log in Page
 
-! [](hello-world/images/website-design-1.png)
+! [](APP-Design-Project/images/website-design-1.png)
 
 ### Sign in Page
 
-! [](hello-world/images/website-design-2.png)
+! [](APP-Design-Project/images/website-design-2.png)
 
 ### Inside the app
 
-! [](hello-world/images/website-design-3.png)
+! [](APP-Design-Project/images/website-design-3.png)
