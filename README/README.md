@@ -32,10 +32,21 @@ A unified communication platform designed to integrate all major messaging servi
 
 ### Inside the Page
 
-
+<img src="alternative design 1.png">
 
 ### Sign in Page
 
-
+<img src="alternative design 2.png">
 
 ### Log in Page
+
+<img src="alternative design 3.png">
+
+## Algorithm
+
+### Functional Requirement
+
+Sending Messages
+
+
+
