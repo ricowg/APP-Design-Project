@@ -90,5 +90,42 @@ Expected Result: Error message is displayed: "You do not have permission to send
 
 Priority: High
 
+## Database Structure and Test Data
 
+### User
 
+<img src="user_database.png">
+
+### Messages
+
+<img src="messages_database.png">
+
+### SQL Queries Examples
+
+1. 'SELECT * FROM messages WHERE Conversation_ID = 1;'
+
+2. 'SELECT * FROM messages WHERE User_ID is 1;'
+
+3. 'SELECT * FROM messages WHERE Message_Sent_Date='2025/07/20';'
+
+4. 'SELECT * FROM messages WHERE Message_Text='Digitized';'
+
+5. 'SELECT * FROM user WHERE Username='mspringtorp1a';'
+
+## Web App Prototype 1 
+As of Week 9
+
+### Login Page
+
+<img src="login_prototype1.png">
+
+### Signup Page
+
+<img src="signup__prototype1.png">
+
+### Messages Page
+
+<img src="messageui_prototype1.png">
+
+## Web App Prototype 2
+As of Week 10
