@@ -10,8 +10,8 @@ A unified communication platform designed to integrate all major messaging servi
 
 | Functional                            | Non-Functional                   |
 | --------------------------------------| ---------------------------------|
-| Merge social media apps together      | Load messages sent under 1 second|
-| Allow communication between people    | Easy to navigate                 |
+| Allow users to login and sign up      | Load messages sent under 1 second|
+| Allow users to send messages          | Easy to navigate                 |
 | User account management               | Compatibility                    |
 
 ## Website Designs
