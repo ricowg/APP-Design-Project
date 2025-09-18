@@ -102,15 +102,15 @@ Priority: High
 
 ### SQL Queries Examples
 
-1. 'SELECT * FROM messages WHERE Conversation_ID = 1;'
+1. `SELECT * FROM messages WHERE Conversation_ID = 1;`
 
-2. 'SELECT * FROM messages WHERE User_ID is 1;'
+2. `SELECT * FROM messages WHERE User_ID is 1;`
 
-3. 'SELECT * FROM messages WHERE Message_Sent_Date='2025/07/20';'
+3. `SELECT * FROM messages WHERE Message_Sent_Date='2025/07/20';`
 
-4. 'SELECT * FROM messages WHERE Message_Text='Digitized';'
+4. `SELECT * FROM messages WHERE Message_Text='Digitized';`
 
-5. 'SELECT * FROM user WHERE Username='mspringtorp1a';'
+5. `SELECT * FROM user WHERE Username='mspringtorp1a';`
 
 ## Web App Prototype 1 
 As of Week 9
@@ -121,7 +121,7 @@ As of Week 9
 
 ### Signup Page
 
-<img src="signup__prototype1.png">
+<img src="signup_prototype1.png">
 
 ### Messages Page
 
