@@ -223,7 +223,7 @@ def login():
 ```
 #### Database Schema
 
-The following information is stored in the `user` table:
+The following information is then stored in the `user` table:
 
 | Column Name             |Data Type| Description                     |
 |-------------------------|---------|---------------------------------|
