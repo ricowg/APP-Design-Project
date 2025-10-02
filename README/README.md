@@ -152,5 +152,8 @@ As of Week 10
 
 ### Report #2
 
+Changed image format from png to avif. Ran test without chrome extensions.
+
 <img src="lighthouse_report_2.png">
+
 
