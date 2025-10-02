@@ -12,7 +12,7 @@ A unified communication platform designed to integrate all major messaging servi
 | --------------------------------------| ---------------------------------|
 | Allow users to login and sign up      | Load messages sent under 1 second|
 | Allow users to send messages          | Easy to navigate                 |
-| User account management               | Compatibility                    |
+| User account management               | Secure user information          |
 
 ## Website Designs
 
