@@ -156,4 +156,78 @@ Changed image format from png to avif. Ran test without chrome extensions.
 
 <img src="lighthouse_report_2.png">
 
+## Adding Interactivity
 
+### Login and Signup Functionality
+
+#### Features:
+- **Signup**: Users create an account through a unique username and password
+- **Login**: Users can login through a registered account
+- **Validation**: System validates information provided by user
+- **Password Security**: Passwords are hashed using `werkzeug.security` for security
+
+#### How It Works
+
+##### Signup Process:
+1. The user enters a unique username and password on the signup page.
+2. The system checks if the username already exists in the database.
+3. If the username is unique:
+   - The password is hashed and stored in the database.
+   - The user is redirected to the login page with a success message.
+4. If the username already exists:
+   - The user is shown an error message.
+
+##### Login Process:
+1. The user enters their username and password on the login page.
+2. The system checks if the username exists in the database.
+3. If the username exists:
+   - The entered password is compared with the hashed password stored in the database.
+   - If the password matches, the user is logged in and redirected to the messaging page.
+   - If the password does not match, an error message is shown.
+4. If the username does not exist:
+   - An error message is shown.
+
+#### Important Code Examples
+
+##### Signup Route (`main.py`)
+
+```
+@app.route("/signup.html", methods=["GET", "POST"])
+def signup():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        if dbHandler.create_user(username, password):
+            flash("Signup successful! Please log in.", "success")
+            return redirect(url_for("login"))
+        else:
+            flash("Username already exists. Please try a different one.", "danger")
+    return render_template("signup.html")
+```
+
+##### Login Route (`main.py`)
+
+```
+@app.route("/login.html", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        if dbHandler.verify_user(username, password):
+            session["username"] = username
+            flash("Login successful!", "success")
+            return redirect(url_for("messages"))
+        else:
+            flash("Invalid username or password. Please try again.", "danger")
+    return render_template("login.html")
+```
+#### Database Schema
+
+The following information is stored in the `user` table:
+
+| Column Name             |Data Type| Description                     |
+|-------------------------|---------|---------------------------------|
+| `User_ID`               | INTEGER | Auto-incrementing primary key.  |
+| `Username`              | TEXT    | Unique username.                |
+| `Password`              | TEXT    | Hashed password.                |
+| `Account_Creation_Date` | DATE    | Account creation date.          |
