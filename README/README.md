@@ -134,11 +134,23 @@ As of Week 10
 
 #### Login Page
 
-
+<img src="login2.png">
 
 #### Sign Up Page
 
-
+<img src="signup2.png">
 
 #### Messages Page
+
+<img src="messages2.png">
+
+## Lighthouse Reports
+
+### Report #1
+
+<img src="lighthouse_report_1.png">
+
+### Report #2
+
+<img src="lighthouse_report_2.png">
 
