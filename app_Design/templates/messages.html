@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block content %}
+<body>
+  <main>  
+      <div class="sidebar">
+        <p>You are messaging:</p>
+        
+        <div class="search-container">
+          <input
+            type="text"
+            id="user-search"
+            class="search-input"
+            placeholder="Search for users..."
+          />
+          <ul id="search-results" class="search-results"></ul>
+        </div>
+
+        <ul class="contacts">
+          {% for contact in contacts %}
+          <li class="contact">
+            <div class="contact-info">
+              <p class="contact-name">{{ contact.name }}</p>
+              <p class="contact-source">From {{ contact.source }}</p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="chat-section">
+        <div class="chat-header">
+          <div class="chat-user">
+            <div class="chat-user-info">
+              <p class="chat-user-name">{{ username }} </p>
+              <a href="{{ url_for('logout') }}" class="sign-out">Sign Out</a>
+           </div>
+          </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+        </div>
+        <div class="chat-input">
+          <button class="input-icon"><img src="static/images/emoji.avif" alt="Emoji"></button>
+          <input type="text" id="message-input" placeholder="Message..." class="message-input">
+          <button class="input-icon" id="send-message-button">
+            <p>Send</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>  
+{% endblock %}
+</body>
