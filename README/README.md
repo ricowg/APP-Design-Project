@@ -102,11 +102,11 @@ Priority: High
 
 ### SQL Queries Examples
 
-1. `SELECT * FROM messages WHERE Conversation_ID = 1;`
+1. `SELECT * FROM messages WHERE Message_ID = 1;`
 
-2. `SELECT * FROM messages WHERE User_ID is 1;`
+2. `SELECT * FROM messages WHERE Sender_ID is 1;`
 
-3. `SELECT * FROM messages WHERE Message_Sent_Date='2025/07/20';`
+3. `SELECT * FROM messages WHERE Receiver_ID is 1;`
 
 4. `SELECT * FROM messages WHERE Message_Text='Digitized';`
 
@@ -142,7 +142,7 @@ As of Week 10
 
 #### Messages Page
 
-<img src="/Users/rickwang/Documents/GitHub/hello-world/README/messages2.png">
+<img src="messages2.png">
 
 ## Lighthouse Reports
 
