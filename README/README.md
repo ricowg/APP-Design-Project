@@ -18,29 +18,29 @@ A communication platform designed to maximise both its user interface and user e
 
 ### Inside the Page
 
-<img src="website-design-1.png" alt="website design 1">
+<img src="images/website-design-1.png" alt="website design 1">
 
 ### Sign in Page
 
-<img src="website-design-2.png" alt="website design 2">
+<img src="images/website-design-2.png" alt="website design 2">
 
 ### Log in Page
 
-<img src="website-design-3.png" alt="website design 3">
+<img src="images/website-design-3.png" alt="website design 3">
 
 ## Alternative Designs
 
 ### Inside the Page
 
-<img src="alternative design 1.png">
+<img src="images/alternative design 1.png">
 
 ### Sign in Page
 
-<img src="alternative design 2.png">
+<img src="images/alternative design 2.png">
 
 ### Log in Page
 
-<img src="alternative design 3.png">
+<img src="images/alternative design 3.png">
 
 ## Algorithms
 
@@ -48,7 +48,7 @@ A communication platform designed to maximise both its user interface and user e
 
 Sending Messages
 
-<img src="message_send_algorithm.png">
+<img src="images/message_send_algorithm.png">
 
 ### Test Case 1
 
@@ -94,11 +94,11 @@ Priority: High
 
 ### User
 
-<img src="user_database.png">
+<img src="images/user_database.png">
 
 ### Messages
 
-<img src="messages_database.png">
+<img src="images/messages_database.png">
 
 ### SQL Queries Examples
 
@@ -119,42 +119,42 @@ As of Week 9
 
 #### Login Page
 
-<img src="login_prototype1.png">
+<img src="images/login_prototype1.png">
 
 #### Sign Up Page
 
-<img src="signup_prototype1.png">
+<img src="images/signup_prototype1.png">
 
 #### Messages Page
 
-<img src="messageui_prototype1.png">
+<img src="images/messageui_prototype1.png">
 
 ### Prototype 2
 As of Week 10
 
 #### Login Page
 
-<img src="login2.png">
+<img src="images/login2.png">
 
 #### Sign Up Page
 
-<img src="signup2.png">
+<img src="images/signup2.png">
 
 #### Messages Page
 
-<img src="messages2.png">
+<img src="images/messages2.png">
 
 ## Lighthouse Reports
 
 ### Report #1
 
-<img src="lighthouse_report_1.png">
+<img src="images/lighthouse_report_1.png">
 
 ### Report #2
 
 Changed image format from png to avif. Ran test without chrome extensions.
 
-<img src="lighthouse_report_2.png">
+<img src="images/lighthouse_report_2.png">
 
 ## Adding Interactivity
 
