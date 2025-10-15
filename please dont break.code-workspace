@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../Flask_PWA_Programming_For_The_Web_Task_Template"
+		}
+	],
+	"settings": {
+		"extensions.ignoreRecommendations": true,
+		"terminal.integrated.defaultProfile.windows": "Git Bash",
+		"workbench.editorAssociations": {
+			"*.md": "vscode.markdown.preview.editor"
+		},
+		"workbench.colorTheme": "Default Dark+",
+		"workbench.iconTheme": "vscode-icons"
+	}
+}
