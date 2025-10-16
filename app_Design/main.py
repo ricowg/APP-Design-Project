@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 from flask import (
     Flask,
@@ -70,9 +71,11 @@ def search_users():
         return jsonify([])
 
     try:
-        con = dbHandler.sql.connect("database/data_source.db")
+        db_path = os.path.join(os.path.dirname(__file__), "database/data_source.db")
+        con = dbHandler.sql.connect(db_path)
         cur = con.cursor()
 
+        print(f"Executing query: SELECT Username FROM user WHERE Username LIKE '%{query}%'")
         cur.execute("SELECT Username FROM user WHERE Username LIKE ?", (f"%{query}%",))
         users = [{"username": row[0]} for row in cur.fetchall()]
 
@@ -85,7 +88,6 @@ def search_users():
         print(f"Error in search_users: {e}")
         return jsonify({"error": "An error occurred while searching for users."}), 500
 
-
 @app.route("/send_message", methods=["POST"])
 def send_message():
     data = request.json
@@ -96,17 +98,21 @@ def send_message():
         return jsonify({"error": "Invalid data"}), 400
 
     try:
-        con = dbHandler.sql.connect("database/data_source.db")
+        db_path = os.path.join(os.path.dirname(__file__), "database/data_source.db")
+        con = dbHandler.sql.connect(db_path)
         cur = con.cursor()
 
-        cur.execute(
-            "SELECT User_ID FROM user WHERE Username = ?", (session["username"],)
-        )
+        print(f"Sender username: {session.get('username')}")
+        print(f"Receiver username: {receiver_username}")
+        print(f"Message text: {message_text}")
+
+        cur.execute("SELECT User_ID FROM user WHERE Username = ?", (session["username"],))
         sender = cur.fetchone()
         cur.execute("SELECT User_ID FROM user WHERE Username = ?", (receiver_username,))
         receiver = cur.fetchone()
 
         if not sender or not receiver:
+            print("One or both users not found.")
             return jsonify({"error": "User not found"}), 404
 
         sender_id = sender[0]
@@ -119,10 +125,12 @@ def send_message():
         con.commit()
         con.close()
 
+        print("Message sent successfully.")
         return jsonify({"success": True, "message": "Message sent successfully!"})
     except Exception as e:
         print(f"Error in send_message: {e}")
         return jsonify({"error": str(e)}), 500
+
 
 
 @app.route("/fetch_messages", methods=["GET"])
@@ -131,7 +139,6 @@ def fetch_messages():
         return jsonify({"error": "Unauthorized"}), 401
 
     current_user = session["username"]
-
     selected_user = request.args.get("selected_user", "").strip()
 
     if not selected_user:
@@ -139,11 +146,20 @@ def fetch_messages():
 
     messages = []
     try:
-        con = dbHandler.sql.connect("database/data_source.db")
+        db_path = os.path.join(os.path.dirname(__file__), "database/data_source.db")
+        con = dbHandler.sql.connect(db_path)
         cur = con.cursor()
 
         print(f"Current user: {current_user}")
         print(f"Selected user: {selected_user}")
+
+        cur.execute("SELECT User_ID FROM user WHERE Username = ?", (current_user,))
+        current_user_id = cur.fetchone()
+        cur.execute("SELECT User_ID FROM user WHERE Username = ?", (selected_user,))
+        selected_user_id = cur.fetchone()
+
+        if not current_user_id or not selected_user_id:
+            return jsonify({"error": "One or both users not found"}), 404
 
         cur.execute(
             """
@@ -152,13 +168,11 @@ def fetch_messages():
                 m.Message_Text,
                 m.Message_Sent_Date
             FROM messages m
-            WHERE (m.Sender_ID = (SELECT User_ID FROM user WHERE Username = ?)
-                   AND m.Receiver_ID = (SELECT User_ID FROM user WHERE Username = ?))
-               OR (m.Sender_ID = (SELECT User_ID FROM user WHERE Username = ?)
-                   AND m.Receiver_ID = (SELECT User_ID FROM user WHERE Username = ?))
+            WHERE (m.Sender_ID = ? AND m.Receiver_ID = ?)
+               OR (m.Sender_ID = ? AND m.Receiver_ID = ?)
             ORDER BY m.Message_Sent_Date ASC
             """,
-            (current_user, selected_user, selected_user, current_user),
+            (current_user_id[0], selected_user_id[0], selected_user_id[0], current_user_id[0]),
         )
 
         rows = cur.fetchall()
