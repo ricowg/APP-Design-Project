@@ -18,24 +18,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function searchUsers() {
     const query = searchInput.value.trim();
-
+  
     if (query.length === 0) {
       console.log("Search query is empty.");
       searchResults.innerHTML = "";
       return;
     }
-
+  
     try {
       console.log("Searching for users with query:", query);
       const response = await fetch(`/search_users?query=${encodeURIComponent(query)}`);
       if (!response.ok) {
-        throw new Error("Failed to fetch users");
+        const errorData = await response.json();
+        console.error("Error fetching users:", errorData.error);
+        return;
       }
       const users = await response.json();
       console.log("Search results:", users);
-
+  
       searchResults.innerHTML = "";
-
+  
       users.forEach((user) => {
         const li = document.createElement("li");
         li.classList.add("search-result-item");

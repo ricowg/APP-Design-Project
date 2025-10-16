@@ -1,9 +1,10 @@
+import os
 import sqlite3 as sql
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
 def listExtension():
-    con = sql.connect("database/data_source.db")
+    db_path = os.path.join(os.path.dirname(__file__), "database/data_source.db")
+    con = sql.connect(db_path)
     cur = con.cursor()
     data = cur.execute("SELECT * FROM extension").fetchall()
     con.close()
@@ -11,10 +12,8 @@ def listExtension():
 
 
 def create_user(username, password):
-    """
-    Create a new user in the 'user' table.
-    """
-    con = sql.connect("database/data_source.db")
+    db_path = os.path.join(os.path.dirname(__file__), "database/data_source.db")
+    con = sql.connect(db_path)
     cur = con.cursor()
     cur.execute("SELECT 1 FROM user WHERE Username = ?", (username,))
     if cur.fetchone():
@@ -34,10 +33,8 @@ def create_user(username, password):
 
 
 def verify_user(username, password):
-    """
-    Verify the username and password against the 'user' table.
-    """
-    con = sql.connect("database/data_source.db")
+    db_path = os.path.join(os.path.dirname(__file__), "database/data_source.db")
+    con = sql.connect(db_path)
     cur = con.cursor()
     cur.execute("SELECT Password FROM user WHERE Username = ?", (username,))
     user = cur.fetchone()
