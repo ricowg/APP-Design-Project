@@ -331,3 +331,15 @@ The following information is then stored in the `user` table:
 | `Receiver_ID`       | INTEGER  | User_ID of user who received the message. |
 | `Message_Text`      | TEXT     | Content of the message.                   |
 | `Message_Sent_Date` | DATETIME | Timestamp when the message was sent.      |
+
+### How to Run
+
+1. clone respitory or download everything.
+
+2. run main.py in terminal/command prompt using the following command:
+
+    `python3 main.py` (mac)
+    or
+    `python main.py` (windows)
+
+**NOTE:** Messaging function can be fully tested by creating 2 accounts. Passwords must be remembered since they are encrypted in the database.
