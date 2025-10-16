@@ -332,7 +332,7 @@ The following information is then stored in the `user` table:
 | `Message_Text`      | TEXT     | Content of the message.                   |
 | `Message_Sent_Date` | DATETIME | Timestamp when the message was sent.      |
 
-### How to Run
+## How to Run
 
 1. clone respitory or download everything.
 
